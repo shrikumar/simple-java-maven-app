@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        
+        stage("Build "){
+            steps {
+                dir('.') {
+                echo "Compiling the project"
+                sh "pwd"
+                sh "mvn compile"
+                }
+            }
+        }
+        stage("Nikhil Test"){
+            steps {
+                echo "Testing the application"
+        }
+        }
+        stage("Package"){
+            steps {
+            echo "Packing the application"
+        }
+        }
+        }
+
+}
